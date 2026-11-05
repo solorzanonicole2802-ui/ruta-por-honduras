@@ -1,0 +1,294 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #17352d;
+  background: #f1f7f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+  line-height: 1.6;
+}
+
+header {
+  padding: 32px 24px;
+  border-radius: 16px;
+  background: #087e5b;
+  color: #ffffff;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+header p {
+  margin: 0;
+}
+
+main {
+  display: grid;
+  gap: 18px;
+  margin: 24px 0;
+}
+
+section {
+  padding: 22px;
+  border: 1px solid #d5e5d9;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+section h2 {
+  margin-top: 0;
+  color: #086747;
+}
+
+.nota-ruta {
+  color: #466057;
+  font-size: 0.95rem;
+}
+
+.mapa-honduras {
+  max-width: 600px;
+  margin: 18px auto 24px;
+}
+
+.mapa-honduras img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #c7dfd6;
+  border-radius: 16px;
+}
+
+.mapa-honduras figcaption {
+  margin-top: 8px;
+  color: #466057;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.ruta {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.parada {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 12px 6px;
+  border-top: 4px solid #c8d8ce;
+  color: #52665d;
+  text-align: center;
+}
+
+.parada:not(:last-child)::after {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  z-index: 0;
+  width: calc(100% + 12px);
+  border-top: 4px dashed #c8d8ce;
+  content: "";
+}
+
+.marcador {
+  z-index: 1;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  margin-top: -30px;
+  place-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: #7c9286;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.parada.actual {
+  border-color: #087e5b;
+  color: #17352d;
+}
+
+.parada.actual .marcador {
+  background: #087e5b;
+  box-shadow: 0 0 0 3px #c6e7d7;
+}
+
+.lugar {
+  font-weight: 700;
+}
+
+.departamento {
+  font-size: 0.85rem;
+}
+
+#ubicacion {
+  margin-bottom: 0;
+}
+
+.estado-juego {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  color: #315849;
+  font-weight: 700;
+}
+
+.medallas-contenedor {
+  margin: 20px 0;
+  padding: 14px;
+  border: 1px solid #e6d69a;
+  border-radius: 10px;
+  background: #fff9e6;
+}
+
+.medallas-contenedor h3 {
+  margin: 0 0 6px;
+  color: #725512;
+}
+
+.medallas-contenedor p {
+  margin: 0;
+}
+
+.estado-juego p {
+  margin: 0;
+}
+
+.dato-lugar {
+  margin-bottom: 8px;
+  padding: 12px 14px;
+  border-left: 4px solid #e5b93e;
+  border-radius: 4px;
+  background: #fff8dc;
+}
+
+.fuente-lugar {
+  margin-top: -8px;
+  font-size: 0.9rem;
+}
+
+.fuente-lugar a {
+  color: #086747;
+}
+
+progress {
+  display: block;
+  width: 100%;
+  height: 16px;
+  margin: 12px 0 20px;
+  accent-color: #087e5b;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+label {
+  flex-basis: 100%;
+  font-weight: 700;
+}
+
+input,
+button {
+  min-height: 46px;
+  border-radius: 8px;
+  font: inherit;
+}
+
+input {
+  width: 150px;
+  padding: 8px 12px;
+  border: 2px solid #8aa99a;
+}
+
+button {
+  padding: 8px 18px;
+  border: 0;
+  background: #f1c84b;
+  color: #263315;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #164fc4;
+  outline-offset: 3px;
+}
+
+#mensaje {
+  min-height: 1.6em;
+  font-weight: 700;
+}
+
+footer {
+  padding: 8px;
+  color: #466057;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 14px;
+  }
+
+  section {
+    padding: 18px;
+  }
+
+  input,
+  button {
+    width: 100%;
+  }
+
+  .ruta {
+    gap: 2px;
+  }
+
+  .parada {
+    padding-right: 1px;
+    padding-left: 1px;
+    font-size: 0.74rem;
+  }
+
+  .marcador {
+    width: 28px;
+    height: 28px;
+    margin-top: -27px;
+  }
+
+  .departamento {
+    font-size: 0.62rem;
+  }
+}

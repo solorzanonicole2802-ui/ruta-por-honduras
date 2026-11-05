@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta por Honduras | Juego de matemáticas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Ruta por Honduras</h1>
+    <p>Un juego para aprender matemáticas mientras recorremos Honduras.</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="bienvenida">
+      <h2 id="bienvenida">¡Bienvenido a la aventura!</h2>
+      <p>
+        Resuelve retos matemáticos para avanzar por distintos lugares de Honduras.
+        Cada respuesta correcta te acerca a tu destino.
+      </p>
+    </section>
+
+    <section aria-labelledby="como-jugar">
+      <h2 id="como-jugar">¿Cómo se juega?</h2>
+      <ol>
+        <li>Lee el reto matemático.</li>
+        <li>Piensa en la respuesta.</li>
+        <li>Avanza por la ruta y descubre Honduras.</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="ruta-titulo">
+      <h2 id="ruta-titulo">Tu ruta por Honduras</h2>
+      <p class="nota-ruta">Ruta esquemática: muestra el orden de las paradas, no las distancias reales.</p>
+      <figure class="mapa-honduras">
+        <img src="honduras.svg" alt="Ilustración esquemática de Honduras con cinco paradas, incluida Marcala y La Ceiba">
+        <figcaption>Una vista ilustrada para ubicar las paradas de la aventura.</figcaption>
+      </figure>
+      <ol class="ruta" aria-label="Paradas de la ruta">
+        <li class="parada actual" aria-current="step">
+          <span class="marcador" aria-hidden="true">1</span>
+          <span class="lugar">Tegucigalpa</span>
+          <span class="departamento">Francisco Morazán</span>
+        </li>
+        <li class="parada">
+          <span class="marcador" aria-hidden="true">2</span>
+          <span class="lugar">Marcala</span>
+          <span class="departamento">La Paz</span>
+        </li>
+        <li class="parada">
+          <span class="marcador" aria-hidden="true">3</span>
+          <span class="lugar">Comayagua</span>
+          <span class="departamento">Comayagua</span>
+        </li>
+        <li class="parada">
+          <span class="marcador" aria-hidden="true">4</span>
+          <span class="lugar">San Pedro Sula</span>
+          <span class="departamento">Cortés</span>
+        </li>
+        <li class="parada">
+          <span class="marcador" aria-hidden="true">5</span>
+          <span class="lugar">La Ceiba</span>
+          <span class="departamento">Atlántida</span>
+        </li>
+      </ol>
+      <p id="ubicacion" aria-live="polite"><strong>Estás aquí:</strong> Tegucigalpa, Francisco Morazán.</p>
+    </section>
+
+    <section aria-labelledby="primer-reto">
+      <h2 id="primer-reto">Reto de la parada</h2>
+      <div class="estado-juego">
+        <p id="contador-reto">Reto 1 de 5</p>
+        <p id="puntuacion">Puntos: 0</p>
+        <p id="record">Récord personal: 0</p>
+      </div>
+      <progress id="progreso" max="5" value="0" aria-label="Progreso de los retos">0 de 5</progress>
+      <p id="dato-lugar" class="dato-lugar"></p>
+      <p id="pregunta"></p>
+      <p class="fuente-lugar"><a id="enlace-fuente" href="#" target="_blank" rel="noopener noreferrer">Conoce más sobre este lugar</a></p>
+      <form>
+        <label for="respuesta">Escribe tu respuesta:</label>
+        <input
+          type="number"
+          id="respuesta"
+          name="respuesta"
+          inputmode="numeric"
+          autocomplete="off"
+          required
+        >
+        <button type="button" id="comprobar">Comprobar</button>
+      </form>
+      <p id="mensaje" aria-live="polite">Escribe tu respuesta y pulsa “Comprobar”.</p>
+      <div id="medallas-contenedor" class="medallas-contenedor" aria-live="polite">
+        <h3>Medallas</h3>
+        <p id="medallas">Completa la ruta para ganar medallas.</p>
+      </div>
+      <button type="button" id="jugar-de-nuevo" hidden>Jugar de nuevo</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto educativo: Ruta por Honduras</p>
+  </footer>
+</body>
+</html>
